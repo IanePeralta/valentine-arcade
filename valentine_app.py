@@ -197,7 +197,7 @@ def potion_game():
         st.caption(res["stats"])
         st.write("✨ **Fragment Obtained!** You can find it on the Home page.")
 
-# --- GAME 3: Valentine BATTLE ---
+# --- GAME 3: Vamp BATTLE ---
 def rpg_battle():
     st.header("⚔️ Battle for Romance")
     import base64 
@@ -251,7 +251,7 @@ def rpg_battle():
     
     # Heroic Sacrifice
     if st.session_state.bhp <= 0 and st.session_state.php <= 0:
-        st.session_state.fragments.add("Valentine Battle")
+        st.session_state.fragments.add("Vamp Battle")
         
         # Show the "Dead" image here too if you want, or keep it text only
         show_animated_gif(gifs["win"], width=300) 
@@ -270,7 +270,7 @@ def rpg_battle():
 
     # Standard Victory
     elif st.session_state.bhp <= 0:
-        st.session_state.fragments.add("Valentine Battle")
+        st.session_state.fragments.add("Vamp Battle")
         
         # --- SHOW THE DEAD VAMPIRE IMAGE ---
         show_animated_gif(gifs["win"], width=300)
@@ -435,13 +435,14 @@ def finale():
 
 # --- SIDEBAR & ROUTING ---
 st.sidebar.title("Ian's Super Cool Arcade")
-menu = ["Home", "Type Racer", "Potion Lab", "Valentine Battle", "Date Simulator"]
+menu = ["Home", "Type Racer", "Potion Lab", "Vamp Battle", "Date Simulator"]
 if st.session_state.heart_forged: menu.append("FINALE")
 page = st.sidebar.radio("Navigate:", menu)
 
 if page == "Home": welcome_page()
 elif page == "Type Racer": type_racer()
 elif page == "Potion Lab": potion_game()
-elif page == "Valentine Battle": rpg_battle()
+elif page == "Vamp Battle": rpg_battle()
 elif page == "Date Simulator": date_sim()
+
 elif page == "FINALE": finale()
