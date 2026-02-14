@@ -404,4 +404,12 @@ def main_page():
         sound_button("INSERT COIN", on_click=enter_arcade).classes('arcade-btn bg-rose-600 text-white text-xl p-8 border-none')
 
 if __name__ in {"__main__", "__mp_main__"}:
-    ui.run(title="Valentine Arcade", favicon="❤️", storage_secret='valentine_secret_key_2026')
+    port = int(os.environ.get("PORT", 8080))
+
+    ui.run(
+        host='0.0.0.0', 
+        port=port, 
+        title="Valentine Arcade", 
+        favicon="❤️", 
+        storage_secret='valentine_secret_key_2026'
+    )
