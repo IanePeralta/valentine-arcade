@@ -214,7 +214,7 @@ def main_page():
                 ui.label(f"ROUND {game_state['round']} OF 5")
             
             with input_container:
-                new_input = ui.input(placeholder="TYPE HERE...").classes('w-full text-lg')
+                new_input = ui.input(placeholder="TYPE PHRASE ABOVE HERE...").classes('w-full text-lg')
                 new_input.props('autofocus')
                 def on_type(e):
                     val = e.value
@@ -413,3 +413,4 @@ if __name__ in {"__main__", "__mp_main__"}:
         favicon="❤️", 
         storage_secret='valentine_secret_key_2026'
     )
+
